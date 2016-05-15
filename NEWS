@@ -1,0 +1,53 @@
+cystiSim 0.1.0
+==============
+
+* first commit to CRAN
+
+cystiSim 0.0.6
+==============
+
+* rename intervention functions
+
+* update help files
+
+* add argument `annotate` to `plot.cystiSim`
+
+cystiSim 0.0.5
+==============
+
+* add `elim` method for `cystiSim` objects
+
+* fix bug in `exp_decay`
+
+cystiSim 0.0.4
+==============
+
+* fix bug in definition of `slaughter.args`
+
+* fix subsetting bug in `do_oxf_vac`
+
+cystiSim 0.0.3
+==============
+
+* various CRAN error/warning/note fixes
+
+* change default `min.age` in `do_oxf` to 1
+
+* introduce `do_oxf_vac` function
+
+cystiSim 0.0.2
+==============
+
+* introduce `magrittr` style model definitions
+
+* introduce functionalities and methods for multiple `cystiSim` simulations
+
+* introduce functionalities for fitting models to data
+
+* update model to make `slaughter` function generic
+
+
+cystiSim 0.0.1
+==============
+
+* the first version

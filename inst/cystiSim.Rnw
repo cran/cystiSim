@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage{xcolor}
+\usepackage[margin=2.5cm]{geometry}
+
+\setlength\parindent{0pt}
+
+\begin{document}
+{\huge \textbf{cystiSim} // \Sexpr{gsub("\\%", "\\\\%", sim$main)}}
+
+\section*{Settings}
+\texttt{cystiSim} version \Sexpr{packageVersion("cystiSim")}
+
+\begin{minipage}[t]{0.49\textwidth}
+<<echo=1>>=
+## transmission probabilities
+cat("ph2m: ", formatC(sim$par$ph2m, format = "f", digits = 6), "\n")
+cat("pl2m: ", formatC(sim$par$pl2m, format = "f", digits = 6), "\n")
+cat("m2p:  ", formatC(sim$par$m2p, format = "f", digits = 6), "\n")
+cat("e2p:  ", formatC(sim$par$e2p, format = "f", digits = 6))
+@
+\end{minipage}
+\begin{minipage}{0.02\textwidth}
+~
+\end{minipage}
+\begin{minipage}[t]{0.49\textwidth}
+<<echo=1>>=
+## efficacy, coverage
+cat("eff_man_mda: ",
+    formatC(sim$par$eff_man_mda, format = "f", digits = 2), "\n")
+cat("cov_man_mda: ",
+    formatC(sim$par$cov_man_mda, format = "f", digits = 2), "\n")
+cat("eff_pig_mda: ",
+    formatC(sim$par$eff_pig_mda, format = "f", digits = 2), "\n")
+cat("cov_pig_mda: ",
+    formatC(sim$par$cov_pig_mda, format = "f", digits = 2), "\n")
+cat("eff_pig_vac: ",
+    formatC(sim$par$eff_pig_vac, format = "f", digits = 2), "\n")
+cat("cov_pig_vac: ",
+    formatC(sim$par$cov_pig_vac, format = "f", digits = 2))
+@
+\end{minipage}
+
+\section*{Model}
+\Sexpr{knitr::knit_child(tmp)}
+
+\section*{Results}
+<<echo=FALSE, fig.height=5, fig.width=9>>=
+plot(sim)
+@
+
+\end{document}
